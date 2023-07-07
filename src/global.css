@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+  /* Global */
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  body {
+    @apply m-0 font-normal text-color-default bg-canvas;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .menu {
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-600;
+  }
+  
+  .menu-selected {
+    @apply inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg;
+  }
+
+  .modal {
+    @apply w-screen sm:w-[600px] h-full sm:h-fit;
+  }
+
+  .btn {
+    @apply relative p-2 mx-1 rounded-lg text-white shadow-md;
+  }
+
+  /* spinner */
+  .spinner {
+    @apply animate-spin;
+    width: 22px;
+    height: 22px;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #cac9c983;
+    border-left: 4px solid #cac9c983;
+    border-top: 4px solid #cac9c983;
+    border-radius: 50px;
+  }
+
+  /* loader from https://codepen.io/WebSonata/pen/bRaONB */
+  .loader {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  .loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+  }
+
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+}
